@@ -32,6 +32,6 @@ def parse_all(prefix):
 
 if __name__ == '__main__':
     res = ''
-    for i in [1, 2, 4, 8, 16]:
+    for i in [1, 2]:
         res += parse_all('log/bandwidth-%d-gpus-' % (i,))
     print res
