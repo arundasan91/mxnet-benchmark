@@ -18,7 +18,7 @@ for network in alexnet inception-v3 resnet ; do
             bs=$((bs*16))
         fi
 
-        python benchmark.py --worker_file $HOSTS --worker_count 16 --gpu_count 16 \
+        python benchmark.py --worker_file $HOSTS --worker_count 10 --gpu_count 2 \
             --networks ${network}:${bs}:${shape} \
             2>&1 | tee $LOG/${network}_${bs}
     done
