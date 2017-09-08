@@ -12,7 +12,7 @@ for network in alexnet resnet inception-v3; do
         shape=3,224,224
     fi
 
-    for gpus in 1 2 4 8 16; do
+    for gpus in 1 2; do
         python measure.py --test-results 0 \
             --gpus `seq -s , 0 $(($gpus-1))` \
             --kv-store device --network $network \
