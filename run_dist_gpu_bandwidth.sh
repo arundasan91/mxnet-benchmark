@@ -7,7 +7,7 @@ LOG=`pwd`/bandwidth
 
 cd $MX_ROOT/tools/bandwidth
 
-for num_gpus in 1 2 4 8 16; do
+for num_gpus in 1 2; do
 
     CUR_LOG=$LOG-${num_gpus}-gpus
     new_log_dir $CUR_LOG
@@ -20,7 +20,7 @@ for num_gpus in 1 2 4 8 16; do
         fi
 
         # for nodes in `seq 1 $NUM_NODES`; do
-        for nodes in 1 2 4 8 16; do
+        for nodes in 1 2 4 8 10; do
             head -n $nodes $HOSTS >hosts
             worker=$((nodes))
             server=$((nodes))
